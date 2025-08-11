@@ -15,14 +15,20 @@ function App() {
         </div>
         <div className="login-body">
           <h1 className="title">peach<br />planet</h1>
-          <input className="glass-input" type="text" placeholder="id" />
-          <input className="glass-input" type="password" placeholder="pw" />
+          <div className="form">
+            <label className="input-label" htmlFor="id-input">id</label>
+            <input className="glass-input" type="text" id="id-input" placeholder=""/>
+
+            <label className="input-label" htmlFor="pw-input">pw</label>
+            <input className="glass-input" type="password" id="pw-input" placeholder=""/>
+           </div>
         </div>
       </div>
 
       {/* 메인 소개 윈도우 */}
       <div className="main-window">
         <div className="main-header">
+          <div className="star">★</div>
           <div className="window-buttons">
             <div className="btn red" />
             <div className="btn yellow" />
@@ -39,7 +45,7 @@ function App() {
           </p>
           <div className="nav-buttons">
             <div className="nav-btn">◀</div>
-            <div className="nav-btn"> </div>
+            <div className="nav-btn">♡</div>
             <div className="nav-btn">▶</div>
           </div>
         </div>
