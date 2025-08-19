@@ -85,31 +85,18 @@ body, html {
   gap: 6px;
 }
 
-.main-header .window-buttons .btn {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 1px solid rgba(0,0,0,.1);
-}
 
 /* ------------------------------
    윈도우 버튼 스타일 (빨/노/초)
 ------------------------------ */
 .window-buttons {
-  display: flex;
-  gap: 6px;
+  width: 50px;  /* 이미지 크기에 맞게 조절 */
+  height: 30px;
+  background-image: url("https://i.imgur.com/wwaYDK3.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
-
-.window-buttons .btn {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: 1px solid rgba(0,0,0,0.1);
-}
-
-.window-buttons .btn.red { background: #ff605c; }
-.window-buttons .btn.yellow { background: #ffbd44; }
-.window-buttons .btn.green { background: #00ca4e; }
 
 /* ------------------------------
    로그인 창 스타일
@@ -135,7 +122,7 @@ body, html {
   background: white;
   margin: 10px;
   border-radius: 8px;
-  padding: 20px 18px;
+  padding: 40px 18px 20px 18px;
   text-align: center;
   overflow: hidden;
 }
@@ -217,29 +204,45 @@ body, html {
   font-size: 14px;
   line-height: 1.6;
   text-align: center;
-  margin: 0 auto;
+  margin-bottom: 28px;
   display: block;
 }
 
 .nav-buttons {
+  display: flex;             /* 가로 한 줄 정렬 */
+  justify-content: center;   /* 가운데 정렬 */
+  align-items: flex-end;       /* 세로 중앙 정렬 */
+  gap: 40px;                 /* 버튼 사이 간격 */
+}
+
+
+.nav-item {
   display: flex;
-  gap: 12px;
-  justify-content: center;
+  flex-direction: column;    /* 버튼 위, 글자 아래 배치 */
+  align-items: center;       /* 글자와 버튼을 중앙 정렬 */
+  gap: 8px;
 }
 
 .nav-btn {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background: #ff9ddb;
   border-radius: 50%;
-  margin-top: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 15px;
+  font-size: 16px;
   cursor: pointer;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+
+.nav-label {
+  margin-top: 6px;
+  font-size: 14px;
+  font-family: 'DNF Bit Bit v2', sans-serif;
+  color: #ff9ddb; /* 핑크색 */
 }
 
 /* ------------------------------
