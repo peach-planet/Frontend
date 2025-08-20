@@ -263,3 +263,31 @@ body, html {
   text-align: left;
   max-width: 260px;
 }
+
+.login-btn {
+  display: block;
+  width: auto;
+  height: 42px;
+  margin-top: 10px;
+  margin: 15px auto 0;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  background: #FF9DDB; /* 핑크색 */
+  color: white;
+  font-family: 'DNF Bit Bit v2', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.1s ease, background 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #ff7fc4; /* hover 시 더 진한 핑크 */
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: translateY(1px);
+}
+

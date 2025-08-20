@@ -24,6 +24,8 @@ function App() {
 
             <label className="input-label" htmlFor="pw-input">pw</label>
             <input className="glass-input" type="password" id="pw-input" placeholder="" />
+
+            <button className="login-btn">log in</button>
           </div>
         </div>
       </div>
@@ -52,17 +54,17 @@ function App() {
           <div className="nav-buttons">
             <div className="nav-item">
               <div className="nav-btn">◀</div>
-              <span className="nav-label">join</span>
-            </div>
-
-            <div className="nav-item">
-              <div className="nav-btn">♡</div>
               <span className="nav-label">&nbsp;</span> {/* 빈 라벨로 높이 맞춤 */}
             </div>
 
             <div className="nav-item">
-              <div className="nav-btn">▶</div>
+              <div className="nav-btn login-btn">♡</div>
               <span className="nav-label">sign in</span>
+            </div>
+
+            <div className="nav-item">
+              <div className="nav-btn">▶</div>
+              <span className="nav-label">&nbsp;</span> {/* 빈 라벨로 높이 맞춤 */}
             </div>
           </div>
         </div>
