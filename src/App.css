@@ -291,3 +291,52 @@ body, html {
   transform: translateY(1px);
 }
 
+/* 회원가입 외곽 창: 콘텐츠만큼 높이 */
+.signup-window {
+  height: auto;
+  min-height: unset;
+}
+
+/* 회원가입 전용 바디 (위로 좀 붙이고, 아래 남는 공간 제거) */
+.signup-body{
+  position: relative;
+  background: #fff;
+  margin: 6px 10px;             /* 상단 여백 작게 */
+  padding: 12px 18px 20px;       /* 상단 패딩 작게 */
+  border-radius: 8px;
+  text-align: left;
+  /* 아래 두 줄이 공백의 주범이었음 */
+  /* min-height: 520px;  ← 삭제 */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;                     /* 요소 간 간격은 gap으로 */
+}
+
+/* 뒤로가기 버튼 (signup-body 기준 고정) */
+.signup-body .back-btn{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: #a8dcff;
+  color: #fff;
+  width: 28px; height: 28px; border-radius: 14px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 2px 6px rgba(0,0,0,.2);
+  cursor:pointer;
+}
+
+/* 제목: 올바른 마진 값으로 수정 */
+.signup-body .title{
+  margin: 40px 0 8px;            /* back-btn 아래 공간만큼 */
+  text-align: left;
+  font-size: 22px;
+  word-spacing: 6px;
+}
+
+/* 폼 왼쪽 정렬 유지 */
+.signup-body .form{
+  margin: 0;
+  max-width: 260px;
+}
+
+
