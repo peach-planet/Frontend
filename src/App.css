@@ -8,6 +8,16 @@
 }
 
 /* ------------------------------
+   폰트 설정
+------------------------------ */
+@font-face {
+  font-family: 'Pixelroborobo';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2107@1.1/Pixelroborobo.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* ------------------------------
    배경 설정
 ------------------------------ */
 body, html {
@@ -339,4 +349,82 @@ body, html {
   max-width: 260px;
 }
 
+/* ------------------------------
+   캐릭터 선택 페이지 스타일 (수정 버전)
+------------------------------ */
+.character-window {
+  width: 80%;
+  max-width: auto;
+  padding: 20px;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
+/* 타이틀 스타일 */
+.character-title {
+  font-size: 36px;
+  margin-bottom: 50px;
+  font-family: "DNF Bit Bit v2", sans-serif;
+  color: #FFE1EE; /* 채움색 */
+  -webkit-text-stroke: 2px #FFA8C8; /* 아웃라인 */
+  text-stroke: 2px #FFA8C8;
+}
+
+/* 캐릭터 리스트 */
+.character-list {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+/* 캐릭터 카드 효과 */
+.character-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px; /* 그림자 퍼짐이 둥글게 */
+}
+
+.character-card:hover {
+  transform: scale(1.08); /* 살짝 커짐 */
+  box-shadow: 0 0 25px rgba(251, 255, 140, 0.6); /* 연한 노란 빛 그림자 */
+  background: rgba(251, 255, 140, 0.15); /* 연한 배경 */
+}
+
+/* 캐릭터 이미지 */
+.character-img {
+  width: 140px;
+  height: auto;
+  background: transparent;
+  box-shadow: none;
+  transition: transform 0.3s ease;
+}
+
+/* 캐릭터 이름 */
+.character-name {
+  margin-top: 10px;
+  font-size: 18px;
+  font-family: "Pixelroborobo", sans-serif;
+  color: #CBDCF5;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.4); /* 회색 그림자 */
+}
+
+/* 캐릭터 전체 감싸는 창 */
+.character-window {
+  width: 90%;
+  max-width: auto;
+  min-height: auto;
+  padding: 40px 90px;
+  border-radius: 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6); /* 살짝 투명 */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
