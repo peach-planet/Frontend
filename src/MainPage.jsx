@@ -27,7 +27,9 @@ function MainPage() {
             <label className="input-label" htmlFor="pw-input">pw</label>
             <input className="glass-input" type="password" id="pw-input" placeholder="" />
 
-            <button className="login-btn">log in</button>
+            <div className="nav-item" onClick={() => navigate('/myplace')} style={{cursor:'pointer'}}>
+              <div className="nav-btn login-btn">log in</div>
+            </div>
           </div>
         </div>
       </div>

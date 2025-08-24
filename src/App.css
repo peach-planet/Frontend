@@ -428,3 +428,258 @@ body, html {
   justify-content: flex-start;
   align-items: center;
 }
+
+/* 레코드 컨테이너 */
+.record-wrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:14px;
+  background: transparent;   
+}
+
+/* 레코드 자체 */
+.record{
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  background-color: transparent; /* ✅ 배경 완전 투명 */
+  box-shadow: none;               /* ✅ 그림자 제거 */
+  cursor: pointer;
+  transition: transform .2s ease;
+  backdrop-filter: none;         
+}
+.record:hover{ transform: scale(1.03); }
+
+/* 회전 애니메이션 */
+@keyframes record-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.record.spin{
+  animation-name: record-rotate;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+/* 버튼은 그대로 */
+.record-btn{
+  font-family: "DNF Bit Bit v2", sans-serif;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.45);
+  color: #CBDCF5;
+  box-shadow: 0 6px 18px rgba(168,220,255,0.6), inset 0 1px 3px rgba(255,255,255,0.8);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: transform .12s ease, background .2s ease;
+}
+.record-btn:hover{ background: rgba(255,255,255,0.6); transform: translateY(-2px); }
+.record-btn:active{ transform: translateY(1px); }
+
+/* ---- 레코드 공통 ---- */
+.record-wrap{ display:flex; flex-direction:column; align-items:center; gap:10px; }
+.record{
+  border-radius:50%;
+  background-size:cover;
+  background-position:center;
+  background-color:transparent;
+  box-shadow:none;
+  cursor:pointer;
+  transition:transform .2s ease;
+}
+.record.hovered{ transform: scale(1.03); }
+
+@keyframes record-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.record.spin{
+  animation: record-rotate linear infinite;
+}
+
+/* ---- 플레이어 레이아웃 ---- */
+.mrp{ width:100%; display:flex; flex-direction:column; align-items:center; }
+.record-grid{
+  width:100%;
+  display:grid;
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
+  gap: 22px;
+  justify-items:center;
+  margin: 10px 0 18px;
+}
+.track-card{
+  width: 100%;
+  max-width: 180px;
+  padding: 14px 10px 10px;
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 18px;
+  box-shadow: 0 8px 18px rgba(0,0,0,.08);
+  backdrop-filter: blur(8px);
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.track-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(168,220,255,.45);
+  background: rgba(255,255,255,0.5);
+}
+.track-card.active{
+  outline: 3px solid #FBFF8C;                /* 선택 강조 */
+  box-shadow: 0 0 30px rgba(251,255,140,.6);  /* 노란빛 */
+  background: rgba(251,255,140,.1);
+}
+
+.track-label{
+  font-family: "Pixelroborobo", sans-serif;
+  color: #CBDCF5;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.35);
+  font-size: 16px;
+}
+
+/* ---- 컨트롤 버튼 ---- */
+.mrp-controls{ display:flex; gap:14px; margin: 8px 0 16px; }
+.glass-btn{
+  font-family: "DNF Bit Bit v2", sans-serif;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(255,255,255,.45);
+  color: #a8dcff;
+  box-shadow: 0 6px 18px rgba(168,220,255,.6), inset 0 1px 3px rgba(255,255,255,.8);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: transform .12s ease, background .2s ease;
+}
+.glass-btn:hover{ transform: translateY(-2px); background: rgba(255,255,255,.6); }
+.glass-btn:active{ transform: translateY(1px); }
+.glass-btn.primary{ color:#CBDCF5; }
+
+/* ---- YouTube ---- */
+.yt-wrap{
+  width: 100%;
+  max-width: 680px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0,0,0,.18);
+  background: #000;
+  margin-bottom: 6px;
+}
+
+/* 유튜브 영상 숨기기 (소리만 재생) */
+.yt-hidden iframe {
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.track-artist {
+  font-family: "DNF Bit Bit v2", sans-serif;
+  font-size: 12px;
+  color: #858585;                       /* ✅ 진한 회색으로 변경 */
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.25);  /* ✅ 그림자 추가해서 대비 강화 */
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+/* 좌/우 레이아웃 (메인 창 내부) */
+.mrp-row{
+  width: 100%;
+  display: flex;
+  gap: 22px;                /* 레코드와 패널 사이 간격 */
+  align-items: flex-start;  /* 상단 정렬 */
+}
+
+.mrp-left{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 좌/우 레이아웃 (메인 창 내부) */
+.mrp-row{
+  width: 100%;
+  display: flex;
+  gap: 22px;                /* 레코드와 패널 사이 간격 */
+  align-items: flex-start;  /* 상단 정렬 */
+}
+
+.mrp-left{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 오른쪽 스크롤 패널: 4개만 보이는 높이 */
+.queue-panel{
+  width: 220px;
+  height: 354px;            /* 4*80 + 3*12 + 2*10 = 354 */
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 24px rgba(168,220,255,.35);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 각 박스가 줄어들지 않도록 고정 */
+.queue-item{
+  height: 80px;
+  min-height: 80px;
+  flex: 0 0 80px;           /* ✅ shrink 방지 + 고정 높이 */
+  border-radius: 14px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.85);
+  box-shadow: 0 6px 14px rgba(0,0,0,.08), inset 0 1px 4px rgba(255,255,255,.8);
+}
+
+
+/* 스크롤바 커스텀 */
+.queue-panel::-webkit-scrollbar{ width: 10px; }
+.queue-panel::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0.5);
+  border-radius: 999px;
+}
+.queue-panel::-webkit-scrollbar-thumb{
+  background: linear-gradient(180deg, #FFB5D9, #CCE6A6);
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.7);
+}
+/* Firefox */
+.queue-panel{ scrollbar-color: #FFB5D9 rgba(255,255,255,0.5); scrollbar-width: thin; }
+
+
+/* 빈 박스 1개 모양 */
+.queue-item{
+  height: 80px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(255,255,255,0.85);
+  box-shadow: 0 6px 14px rgba(0,0,0,.08), inset 0 1px 4px rgba(255,255,255,.8);
+}
+
+/* 스크롤바 커스텀 */
+.queue-panel::-webkit-scrollbar{ width: 10px; }
+.queue-panel::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0.5);
+  border-radius: 999px;
+}
+.queue-panel::-webkit-scrollbar-thumb{
+  background: linear-gradient(180deg, #FFB5D9, #CCE6A6);
+  border-radius: 999px;
+  border: 2px solid rgba(255,255,255,0.7);
+}
+/* Firefox */
+.queue-panel{ scrollbar-color: #FFB5D9 rgba(255,255,255,0.5); scrollbar-width: thin; }
+
+
