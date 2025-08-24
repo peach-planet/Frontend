@@ -8,7 +8,7 @@ const TRACKS = [
   { title: "Count To Love", artist: "BOYNEXTDOOR", youtubeId: "17mqKMHUxXY", img: "/assets/vinyl2.png" },
   { title: "DANCING ALONE", artist: "KiiiKiii", youtubeId: "HoVQi1cnkh4", img: "/assets/vinyl3.png" },
   { title: "Surf", artist: "NCT WISH", youtubeId: "tGc_cYtHsWo", img: "/assets/vinyl4.png" },
-  { title: "XOXZ", artist: "IVE", youtubeId: "2ElmJkoaKcc", img: "/assets/vinyl5.png" }
+  { title: "야경", artist: "TOUCHED", youtubeId: "YD1QkZcqygY", img: "/assets/vinyl5.png" }
 ];
 
 export default function MusicRecordPlayer() {

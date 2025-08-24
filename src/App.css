@@ -157,7 +157,7 @@ body, html {
 .glass-input {
   width: 100%;
   height: 42px;
-  padding: 0 16px;
+  padding: 10px 16px;
   border-radius: 30px;
   border: none;
   background: rgba(255, 255, 255, 0.3);
@@ -172,6 +172,10 @@ body, html {
   box-sizing: border-box;
   color: #FFB5D9;
   caret-color: #FFB5D9;
+}
+
+.glass-input::placeholder {
+  color: #aaa;
 }
 
 /* ------------------------------
@@ -635,7 +639,7 @@ body, html {
 /* 각 박스가 줄어들지 않도록 고정 */
 .queue-item{
   height: 80px;
-  min-height: 80px;
+  min-height: 110px;
   flex: 0 0 80px;           /* ✅ shrink 방지 + 고정 높이 */
   border-radius: 14px;
   background: rgba(255,255,255,0.7);
@@ -682,4 +686,118 @@ body, html {
 /* Firefox */
 .queue-panel{ scrollbar-color: #FFB5D9 rgba(255,255,255,0.5); scrollbar-width: thin; }
 
+/* 폴더 도크 (캐릭터 창 옆) */
+.folder-dock{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.folder-btn{
+  width: 84px;
+  height: 86px;
+  border-radius: 18px;
+  border: none;
+  background: none;
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+  color: #a8dcff;               /* 아이콘 색 */
+  font-family: "DNF Bit Bit v2", sans-serif;
+}
+.folder-btn:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 32px rgba(168,220,255,.5);
+  background: none;
+}
+.folder-btn svg{
+  width: 30px; height: 30px;
+}
+.folder-btn span{
+  font-size: 12px;
+  color: #FF9DDB;
+}
+
+
+/* textarea 전용 스타일 */
+textarea.glass-input {
+  min-height: 120px;
+  resize: none;
+}
+
+/* save 버튼 */
+.save-btn {
+  margin-top: 16px;
+  padding: 10px 28px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #FF9DDB, #FFB5D9);
+  color: white;
+  font-family: "DNF Bit Bit v2", sans-serif;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+
+.save-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+.qi {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 12px;
+}
+
+.qi-title{
+  font-family: "DNF Bit Bit v2", sans-serif;
+  font-size: 14px;
+  color: #8aa3d9;             /* 파스텔 블루 */
+  text-shadow: 0 1px 2px rgba(0,0,0,.15);
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.qi-snippet {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.35;
+  max-height: 2.7em;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.qi-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.qi-actions button {
+  flex: 1;
+  padding: 4px 6px;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+  cursor: pointer;
+  font-family: "DNF Bit Bit v2", sans-serif;
+  background: #a8dcff;
+  color: #fff;
+  transition: background .2s;
+}
+
+.qi-actions button:hover {
+  background: #7ac3ff;
+}
 
