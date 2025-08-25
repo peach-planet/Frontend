@@ -15,6 +15,10 @@ export default function MyPlacePage() {
     Illia:  "/assets/illia.gif",
     Rora:   "/assets/rora.gif",
     Annie:  "/assets/annie.gif",
+    Sparkle: "/assets/sparkle.gif",
+    Happy: "/assets/happy.gif",
+    Wink: "/assets/wink.gif",
+    Love: "/assets/love.gif",
   };
   const gifSrc = CHAR_GIF[currentChar];
 
@@ -81,7 +85,7 @@ export default function MyPlacePage() {
         </button>
         <button className="folder-btn" onClick={() => navigate("/expression-select", { state: { characterName: currentChar } })} title="express">
           <svg viewBox="0 0 24 24"><path d="M10 4l2 2h8a2 2 0 012 2v9a3 3 0 01-3 3H5a3 3 0 01-3-3V7a3 3 0 013-3h5z" fill="currentColor"/></svg>
-          <span>express</span>
+          <span>emotion</span>
         </button>
       </div>
     </div>
